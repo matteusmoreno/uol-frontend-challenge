@@ -1,7 +1,12 @@
 // Função para listar jogadores (fora do DOMContentLoaded)
 function listPlayers() {
     fetch("https://uol-backend-challenge-fudzgsc9hhbjgbaf.eastus2-01.azurewebsites.net/players/find-all")
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro ao buscar jogadores: ${response.statusText}`);
+            }
+            return response.json();
+        })
         .then(data => {
             const playersTableBody = document.querySelector("#playersTable tbody");
             playersTableBody.innerHTML = "";
