@@ -74,4 +74,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Inicializa a lista de jogadores quando o DOM estiver carregado
     listPlayers();
+    
 });
