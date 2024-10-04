@@ -1,6 +1,6 @@
 // Função para listar jogadores (fora do DOMContentLoaded)
 function listPlayers() {
-    fetch("http://localhost:8088/players/find-all")
+    fetch("https://uol-backend-challenge-fudzgsc9hhbjgbaf.eastus2-01.azurewebsites.net/players/find-all")
         .then(response => response.json())
         .then(data => {
             const playersTableBody = document.querySelector("#playersTable tbody");
@@ -25,7 +25,7 @@ function listPlayers() {
 
 // Função para deletar um jogador (fora do DOMContentLoaded)
 function deletePlayer(playerId) {
-    fetch(`http://localhost:8088/players/delete/${playerId}`, {
+    fetch(`https://uol-backend-challenge-fudzgsc9hhbjgbaf.eastus2-01.azurewebsites.net/players/delete/${playerId}`, {
         method: 'DELETE'
     })
     .then(response => {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
             heroesGroup: playerForm.heroesGroup.value
         };
 
-        fetch("http://localhost:8088/players/create", {
+        fetch("https://uol-backend-challenge-fudzgsc9hhbjgbaf.eastus2-01.azurewebsites.net/players/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
